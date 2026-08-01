@@ -1,0 +1,4 @@
+- **git init**: khởi tạo 1 project 
+- **git add <file name>**: đưa 1 file cụ thể vào vùng staging area
+- **git add . ** : Đưa tất cả file thay đổi vào vúng staging area
+- **git commit -m "message"**: Lưu lại những gì đã ở staging area thành 1 commit
