@@ -1,0 +1,14 @@
+1, tao 3 file : file1,file2,file3
+-> vung local 
+2, chay lenh init
+-> vung local (working directory)
+3, git commit -m " init project"
+-> Không commit được vì chưa git add
+4, git add file1
+file1 → Staging Area
+file2, file3 vẫn ở Working Directory
+5,git commit -m "file 1"
+file1 → staging
+file2, file3 vẫn ở Working Directory
+6, git commit-m add file
+ Không có gì để commit (nếu chưa git add thêm file nào)
