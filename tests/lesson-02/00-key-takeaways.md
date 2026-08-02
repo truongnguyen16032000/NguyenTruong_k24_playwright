@@ -57,11 +57,13 @@
 
   **Prefix:** toan tu nam o phia truoc (tang truoc tra ve sau )
        ++i
+       
        --i
 
 
   **Postfix:** toan tu nam o phia sau (tra ve truoc roi tang sau)
        i++
+
        i--
 
   **9. Toan tu toan hoc**
@@ -75,8 +77,9 @@
        }
 
   **11. Vong lap**
+
       cu phap vong lap for
-      for (dieu kien khoi tao; dieu kien lap; cap nhat)
+      for (<dieu kien khoi tao>; <dieu kien lap>; <cap nhat>)
       {
         //code
       }
