@@ -54,14 +54,13 @@
       OR (||): tra ve TRUE neu 1 trong 2 dieu kien dung
 
   **8.Toan tu 1 ngoi**
-      **Prefix:** toan tu nam o phia truoc (tang truoc tra ve sau )
 
+  **Prefix:** toan tu nam o phia truoc (tang truoc tra ve sau )
        ++i
        --i
 
 
-
-      **Postfix:** toan tu nam o phia sau (tra ve truoc roi tang sau)
+  **Postfix:** toan tu nam o phia sau (tra ve truoc roi tang sau)
        i++
        i--
 
@@ -70,7 +69,7 @@
       tuong tu nhu cac phep tinh +,-,*./ da duoc hoc
 
    **10. Cau dieu kien**
-   
+
        if(<dieu kien>){
         //code
        }
