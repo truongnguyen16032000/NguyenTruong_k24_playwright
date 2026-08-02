@@ -52,14 +52,14 @@
        if(<dieu kien>){
         //code
        }
-       
-    **11. Vong lap**
+
+  **11. Vong lap**
       cu phap vong lap for
       for (dieu kien khoi tao; dieu kien lap; cap nhat)
       {
         //code
       }
-## 2. Tong hop kien thuc ve GIT
+##  Tong hop kien thuc ve GIT
  -  **git init**: khởi tạo 1 project 
  - **git add <file name>**: đưa 1 file cụ thể vào vùng staging area
  - **git add .** : Đưa tất cả file thay đổi vào vùng staging area
