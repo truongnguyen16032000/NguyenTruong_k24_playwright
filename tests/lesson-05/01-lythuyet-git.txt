@@ -1,0 +1,3 @@
+1, git commit –amend -m "message": Thay đổi commit message 
+2, git restore –staged <file name>: Đưa file ra khỏi Staging Area
+3, git reset HEAD~1 : Bỏ commit gần nhất khỏi lịch sử hiện tại

@@ -1,0 +1,54 @@
+1, Tao file file 1, file 2, file3
+   - local: file 1, file 2, file 3
+   - Working Directory: file 1, file 2, file 3
+   - Staging
+   - Repository
+
+2, git init: Khởi tạo Git repository cho thư mục hiện tại.
+   - local: file 1, file 2, file 3
+   - Working Directory: file 1, file 2, file 3
+   - Staging
+   - Repository
+
+3, git commit -m "init project": chay lenh nay se bao loi vi chua add file nao vao 
+   - local: file 1, file 2, file 3
+   - Working Directory: file 1, file 2, file 3
+   - Staging
+   - Repository
+
+4, git add file1 : dua file 1 len staging
+   - local:  file 1, file 2, file 3
+   - Working Directory: file 1, file 2, file 3
+   - Staging : file 1
+   - Repository
+
+5, git commit -m "add file": git lay file 1 trong staging de tao commit
+   - local:  file 1, file 2, file 3
+   - Working Directory: file 1, file 2, file 3
+   - Staging :
+   - Repository: file 1
+
+6,git add . : Add tất cả những file thay đổi/chưa được track trong thư mục hiện tại.
+   - local: file 1, file 2, file 3
+   - Working Directory: file 1, file 2, file 3
+   - Staging :file 2, file 3
+   - Repository: file 1
+
+7, git restore --staged file2: Bỏ file2 khỏi Staging
+   - local: file 1, file 2, file 3
+   - Working Directory: file 1, file 2, file 3
+   - Staging :file 3
+   - Repository: file 1
+
+8, git commit -m "add all files" : tao commit voi noi dung message la add all file
+   - local: file 1, file 2, file 3
+   - Working Directory: file 1, file 2, file 3
+   - Staging :
+   - Repository: file 1,file 3
+
+9, git reset HEAD~1 : Bỏ commit gần nhất khỏi lịch sử, nhưng giữ lại thay đổi của commit đó trong Working Directory.
+   - local: file 1, file 2, file 3
+   - Working Directory: file 1, file 2, file 3
+   - Staging :
+   - Repository: file 1
+=> sau khi thuc hien het cac cau lenh nay thi chi duy nhat file1 duoc push len 
