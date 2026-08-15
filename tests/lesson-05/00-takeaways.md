@@ -61,7 +61,7 @@ Một node (phần tử HTML) thông thường được cấu tạo từ các th
 
 ---
 
-## 3. Playwright Basic Concepts
+## 3. Playwright Basic 
 
 ### Cấu trúc Test Case & Step
 
@@ -103,7 +103,7 @@ const addTaskBtn = page.locator("//button[@id='add-task']");
 
 ---
 
-### Các thao tác tương tác (Interactions)
+### Các thao tác tương tác
 
 #### 1. Click
 ```typescript
