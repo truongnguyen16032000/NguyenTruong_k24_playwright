@@ -1,65 +1,148 @@
-1, DOM (Document object model)
-- cấu trúc của 1 node gồm: 
-+ thẻ/tag đóng , mở 
-+ thuộc tính
-+ giá trị của thuộc tính 
-+ text 
-vd : <button id="add-task">Add Task</button>
-+ thẻ/tag đóng , mở : thẻ button
-+ thuộc tính : id
-+ giá trị của thuộc tính : add-task
-+ text : Add Task
-- Một số thẻ của thuộc tính : 
-+ <html>:Thẻ gốc của trang 
-+ <head>: chứa metadata: tiêu đề website, hiển thị google
-+ <body>: Nội dung hiển thị của cả website
-+ <div>: Khối/container chung
-+ <span>:inline container
-+ <header>, <footer>,<nav>,<section>:thẻ ngữ nghĩa
-+ <h1>: tiêu đề
-+ <p>: Đoạn văn
-+ <a>: liên kết
-+<li>,<ol>,<ul>: Danh sách
-2, Selector
-+ Xpath:
-  + Xpath tuyệt đối
-    bat dau =1/
-  + Xpath tuơng đối ( nên dùng)
-     //tenthe[@thuoctinh='giatri]
-     vd: //button[@id='add-task']
-+ Playwright basic
-- test:
-   test ("ten test"), asyn ({page})=>{
-   // code của test
-   }
-- steps: đơn vị nhỏ hơn test, dùng để khai báo từng steps của testcase
-await test.step("ten step", asyn()=> {
-    // code cua step
+
+## 1. Document Object Model (DOM)
+
+### Cấu trúc của một Node
+Một node (phần tử HTML) thông thường được cấu tạo từ các thành phần chính:
+
+1. **Thẻ (Tag) đóng / mở**: Định nghĩa loại phần tử.
+2. **Thuộc tính (Attribute)**: Cung cấp thông tin bổ sung cho thẻ.
+3. **Giá trị thuộc tính (Attribute Value)**: Giá trị gán cho thuộc tính.
+4. **Nội dung văn bản (Text content)**: Phần hiển thị bên trong thẻ.
+
+**Ví dụ:**
+```html
+<button id="add-task">Add Task</button>
+```
+
+| Thành phần | Giá trị trong ví dụ |
+| :--- | :--- |
+| **Thẻ mở / đóng** | `<button>` ... `</button>` |
+| **Thuộc tính** | `id` |
+| **Giá trị thuộc tính** | `add-task` |
+| **Text content** | `Add Task` |
+
+---
+
+### Các thẻ HTML thông dụng
+
+| Thẻ | Phân loại / Ý nghĩa |
+| :--- | :--- |
+| `<html>` | Thẻ gốc (root) chứa toàn bộ trang web. |
+| `<head>` | Chứa metadata: tiêu đề (title), cấu hình SEO, script, stylesheet. |
+| `<body>` | Chứa toàn bộ nội dung hiển thị của website. |
+| `<div>` | Thẻ khối (block container) dùng để nhóm các phần tử. |
+| `<span>` | Thẻ nội dòng (inline container) dùng để bọc văn bản/phần tử nhỏ. |
+| `<header>`, `<footer>`, `<nav>`, `<section>` | Các thẻ ngữ nghĩa (Semantic tags) dựng bố cục trang. |
+| `<h1>` - `<h6>` | Các thẻ tiêu đề (Heading). |
+| `<p>` | Đoạn văn bản (Paragraph). |
+| `<a>` | Thẻ liên kết (Hyperlink). |
+| `<ul>`, `<ol>`, `<li>` | Danh sách không thứ tự (`<ul>`), có thứ tự (`<ol>`) và phần tử con (`<li>`). |
+
+---
+
+## 2. Selector & XPath
+
+### XPath (XML Path Language)
+
+- **XPath tuyệt đối (Absolute XPath)**:
+  - Bắt đầu bằng `/` (đi từ thẻ gốc `html`).
+  - *Hạn chế:* Dễ gãy script khi cấu trúc giao diện thay đổi.
+  - *Ví dụ:* `/html/body/div[1]/button`
+
+- **XPath tương đối (Relative XPath) - *Khuyên dùng***:
+  - Bắt đầu bằng `//`.
+  - Cú pháp chuẩn:
+    ```xpath
+    //tenthe[@thuoctinh='giatri']
+    ```
+  - *Ví dụ:*
+    ```xpath
+    //button[@id='add-task']
+    ```
+
+---
+
+## 3. Playwright Basic Concepts
+
+### Cấu trúc Test Case & Step
+
+#### Khởi tạo Test
+```typescript
+import { test, expect } from '@playwright/test';
+
+test('Tên test case', async ({ page }) => {
+  // Code thực thi của test case
 });
-- navigate
- await page.goto ("url page);
-- Locate
-  sử dụng page.locator("<selector>") để chọn phần tử trên trang 
-- click 
- + single click 
- await page.locator (//buton).click();
- + double click
- await page.locator (//buton).dbclick();
- + click chuột phải
- await page.locator (//buton).click({
-    button:'right'
- });
- - input
- + locator + fill(value)
- - radio
- + locator + check()
- - checkbox : 
-    + checked:locator + check()
-    + uncheck:locator + uncheck()
-- select 
-  locator + selectOption(value)
-- upload
- locator + setInputFiles(file)
-- image 
+```
 
+#### Sử dụng Steps
+`test.step` giúp chia nhỏ test case thành các bước rõ ràng, hỗ trợ đọc report trực quan.
 
+```typescript
+await test.step('Tên step', async () => {
+  // Code thực thi của step
+});
+```
+
+---
+
+### Điều hướng (Navigation)
+
+```typescript
+await page.goto('https://example.com');
+```
+
+---
+
+### Tìm phần tử (Locate)
+
+Sử dụng `page.locator()` với CSS selector hoặc XPath để trỏ đến phần tử trên trang.
+
+```typescript
+const addTaskBtn = page.locator("//button[@id='add-task']");
+```
+
+---
+
+### Các thao tác tương tác (Interactions)
+
+#### 1. Click
+```typescript
+// Single click (Click đơn)
+await page.locator("//button[@id='add-task']").click();
+
+// Double click (Click kép)
+await page.locator("//button[@id='add-task']").dblclick();
+
+// Right click (Click chuột phải)
+await page.locator("//button[@id='add-task']").click({ button: 'right' });
+```
+
+#### 2. Nhập dữ liệu (Input / Fill)
+```typescript
+await page.locator("//input[@id='username']").fill('my_username');
+```
+
+#### 3. Radio Button
+```typescript
+await page.locator("//input[@type='radio' and @value='gender-male']").check();
+```
+
+#### 4. Checkbox
+```typescript
+// Tích chọn (Check)
+await page.locator("//input[@type='checkbox']").check();
+
+// Bỏ tích chọn (Uncheck)
+await page.locator("//input[@type='checkbox']").uncheck();
+```
+
+#### 5. Dropdown (Select Option)
+```typescript
+await page.locator("select#country").selectOption('VN');
+```
+
+#### 6. Tải lên tệp (Upload File)
+```typescript
+await page.locator("input[type='file']").setInputFiles('path/to/file.pdf');
+```
