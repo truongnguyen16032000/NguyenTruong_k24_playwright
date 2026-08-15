@@ -46,7 +46,6 @@ Một node (phần tử HTML) thông thường được cấu tạo từ các th
 
 - **XPath tuyệt đối (Absolute XPath)**:
   - Bắt đầu bằng `/` (đi từ thẻ gốc `html`).
-  - *Hạn chế:* Dễ gãy script khi cấu trúc giao diện thay đổi.
   - *Ví dụ:* `/html/body/div[1]/button`
 
 - **XPath tương đối (Relative XPath) - *Khuyên dùng***:
