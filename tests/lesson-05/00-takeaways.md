@@ -60,4 +60,6 @@ await test.step("ten step", asyn()=> {
   locator + selectOption(value)
 - upload
  locator + setInputFiles(file)
+- image 
+
 
